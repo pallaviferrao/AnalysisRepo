@@ -3,4 +3,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return jsonify({'prediction': 'What is Inkita doing?', 'value': 'She will let me know'})
+    return jsonify({'prediction': 'What is Inkita doing?', 'value': 'She will let me know?'})
