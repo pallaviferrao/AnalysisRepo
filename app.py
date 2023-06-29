@@ -16,4 +16,4 @@ def home():
     # dump information to that file
     data  = pickle.load(open('modelTr4.pkl', 'rb'))
     valR = data.predict(dR)
-    return jsonify({'prediction': 'What is Inkita doing?', 'value': valR[0]})
+    return jsonify({'prediction': 'What is Inkita doing?', 'value': str(valR[0])})
