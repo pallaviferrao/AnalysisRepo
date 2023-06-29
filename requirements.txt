@@ -2,4 +2,5 @@ Flask
 Gunicorn
 sklearn
 numpy
-torch
+SciPy
+scikit-learn
