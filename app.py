@@ -26,6 +26,7 @@ def hanalysisSvm():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.get_json()
+        return json
         age = json['age']
         restingBp = json['restingBp']
         cholestrol = json['cholestrol']
