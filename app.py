@@ -23,10 +23,14 @@ def home():
 
 @app.route("/getSvmAnalysis")
 def hanalysisSvm():
+    print(request)
+    print(request.headers)
+    print( request.headers.get('Content-Type'))
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
+        print("Inside if")
         json = request.get_json()
-        return json
+        print(json)
         age = json['age']
         restingBp = json['restingBp']
         cholestrol = json['cholestrol']
