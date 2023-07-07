@@ -21,7 +21,7 @@ def home():
     valR = data.predict(dR)
     return jsonify({'prediction': 'What is Inkita doing?', 'value': str(valR[0])})
 
-@app.route("/getSvmAnalysis")
+@app.route("/getSvmAnalysis",methods=['POST'])
 def hanalysisSvm():
     print(request)
     print(request.headers)
@@ -29,7 +29,7 @@ def hanalysisSvm():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         print("Inside if")
-        json = request.get_json()
+        json = request.form.get('body')
         print(json)
         age = json['age']
         restingBp = json['restingBp']
