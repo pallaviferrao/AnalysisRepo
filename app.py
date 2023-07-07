@@ -64,9 +64,9 @@ def hanalysisSvm():
         restecg2 =1
   
 
-    dR = [age, restingBp, cholestrol, minHeartRate, prevPeak, sex, isExcerciseInduceAngina,
+    dR = [[age, restingBp, cholestrol, minHeartRate, prevPeak, sex, isExcerciseInduceAngina,
     caa1, caa2, caa3, caa4, isTypicalAngina, isAtypicalAngina, isNonAnginalPain, fastingBpGt120,
-    restecg1, restecg2, 0, 1,  1.  ,0 ,  0]
+    restecg1, restecg2, 0, 1,  1.  ,0 ,  0]]
     data  = pickle.load(open('modelTr4.pkl', 'rb'))
     valR = data.predict(dR)
     return jsonify({'prediction': 'What is Inkita doing?', 'value': str(valR[0])})
