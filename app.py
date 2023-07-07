@@ -24,7 +24,7 @@ def home():
 @app.route("/getSvmAnalysis", methods=['POST'])
 def hanalysisSvm():
     print("Inside the func")
-    print(request.form)
+    print(request.json)
     # print( request.headers.get('Content-Type'))
     # content_type = request.headers.get('Content-Type')
     # if (content_type == 'application/json'):
