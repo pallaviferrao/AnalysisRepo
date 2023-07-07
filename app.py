@@ -17,3 +17,43 @@ def home():
     data  = pickle.load(open('modelTr4.pkl', 'rb'))
     valR = data.predict(dR)
     return jsonify({'prediction': 'What is Inkita doing?', 'value': str(valR[0])})
+
+@app.route("/getSvmAnalysis")
+def hanalysisSvm():
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json = request.get_json()
+        age = json['age']
+        restingBp = json['restingBp']
+        cholestrol = json['cholestrol']
+        minHeartRate = json['minHeartRate']
+        prevPeak = json['prevPeak']
+        sex = json['sex']
+        isExcerciseInduceAngina =json['isExcerciseInduceAngina']
+        isTypicalAngina = json['isTypicalAngina']
+        isAtypicalAngina = json['isAtypicalAngina']
+        isNonAnginalPain = json['isNonAnginalPain']
+        majorVessel = json['majorVessel']
+        fastingBpGt120 = json['fastingBpGt120']
+        restecg  = json['restecg']
+        slope = json['slope']
+        if(majorVessel == 1):
+            caa1 =1
+        if(majorVessel == 2):
+            caa2 =1
+        if(majorVessel == 3):
+            caa3 =1
+        if(majorVessel == 4):
+            caa4 =1
+        if(restecg == 1):
+            restecg1 =1
+        if(restecg == 2):
+            restecg2 =1
+  
+
+        dR = [age, restingBp, cholestrol, minHeartRate, prevPeak, sex, isExcerciseInduceAngina,
+        caa1, caa2, caa3, caa4, isTypicalAngina, isAtypicalAngina, isNonAnginalPain, fastingBpGt120,
+        restecg1, restecg2, 0, 1,  1.  ,0 ,  0]
+        data  = pickle.load(open('modelTr4.pkl', 'rb'))
+        valR = data.predict(dR)
+        return jsonify({'prediction': 'What is Inkita doing?', 'value': str(valR[0])})
