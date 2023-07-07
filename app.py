@@ -21,7 +21,7 @@ def home():
     valR = data.predict(dR)
     return jsonify({'prediction': 'What is Inkita doing?', 'value': str(valR[0])})
 
-@app.route("/getSvmAnalysis",methods=['POST'])
+@app.route("/getSvmAnalysis")
 def hanalysisSvm():
     print(request)
     print(request.headers)
