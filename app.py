@@ -29,7 +29,7 @@ def hanalysisSvm():
     # content_type = request.headers.get('Content-Type')
     # if (content_type == 'application/json'):
     print("Inside if")
-    json = request.form.get('body')
+    json = request.json
     print(json)
     age = json['age']
     restingBp = json['restingBp']
