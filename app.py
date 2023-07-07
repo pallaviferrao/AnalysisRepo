@@ -24,7 +24,6 @@ def home():
 @app.route("/getSvmAnalysis", methods=['POST'])
 def hanalysisSvm():
     print("Inside the func")
-    print(request.json)
     # print( request.headers.get('Content-Type'))
     # content_type = request.headers.get('Content-Type')
     # if (content_type == 'application/json'):
@@ -45,6 +44,12 @@ def hanalysisSvm():
     fastingBpGt120 = json['fastingBpGt120']
     restecg  = json['restecg']
     slope = json['slope']
+    caa1 = 0
+    caa2 =0 
+    caa3 = 0
+    caa4 =0
+    restecg1=0
+    restecg2=0
     if(majorVessel == 1):
         caa1 =1
     if(majorVessel == 2):
