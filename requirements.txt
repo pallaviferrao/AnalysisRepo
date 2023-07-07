@@ -3,3 +3,4 @@ Gunicorn
 numpy
 SciPy
 scikit-learn
+flask-cors
